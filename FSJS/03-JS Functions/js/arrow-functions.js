@@ -3,7 +3,7 @@ const getRandomNumber = (upper) => {
   return randomNumber
 }
 
-console.log(getRandomNumber(20))
-console.log(getRandomNumber(444))
-console.log(getRandomNumber(21))
-console.log(getRandomNumber(3291988))
+const getArea = (width, length, unit) => {
+  const area = width * length
+  return `${area} ${unit}`
+}
