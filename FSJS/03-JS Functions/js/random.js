@@ -1,6 +1,9 @@
-function getRandomNumber() {
-  const randomNumber = Math.floor(Math.random() * 6) + 1
+function getRandomNumber(upper) {
+  const randomNumber = Math.floor(Math.random() * upper) + 1
   return randomNumber
 }
 
-const dieRoll = getRandomNumber()
+console.log(getRandomNumber(6))
+console.log(getRandomNumber(100))
+console.log(getRandomNumber(26))
+console.log(getRandomNumber(450))
