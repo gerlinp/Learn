@@ -1,67 +1,13 @@
 let html = ''
-let red
-let green
-let blue
-let randomRGB
 
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">1</div>`
+const randomRGBColor = () => Math.floor(Math.random() * 256)
 
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">2</div>`
+function randomRGB(value) {
+  return `rgb( ${value()}, ${value()}, ${value()} )`
+}
 
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">3</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">4</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">5</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">6</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">7</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">8</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">9</div>`
-
-red = Math.floor(Math.random() * 256)
-green = Math.floor(Math.random() * 256)
-blue = Math.floor(Math.random() * 256)
-randomRGB = `rgb( ${red}, ${green}, ${blue} )`
-html += `<div style="background-color: ${randomRGB}">10</div>`
+for (let i = 0; i < 100; i++) {
+  html += `<div style="background-color: ${randomRGB(randomRGBColor)}">${i}</div>`
+}
 
 document.querySelector('main').innerHTML = html
