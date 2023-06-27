@@ -1,7 +1,7 @@
+const btnUpdate = document.querySelector('.btn-main')
 const headline = document.getElementById('headline')
-const btnUpdate = document.getElementById('btn-main')
-const items = document.getElementsByTagName('li')
-const highlights = document.getElementsByClassName('highlight')
+const items = document.querySelectorAll('li')
+const highlights = document.querySelectorAll('.highlight')
 const randomRGBColor = () => Math.floor(Math.random() * 256)
 
 for (const highlight of highlights) {
