@@ -4,11 +4,11 @@ const btnRemove = document.querySelector('.btn-remove')
 const taskList = document.querySelector('.list-container ul')
 const listItems = document.getElementsByTagName('li')
 
-// for (let i = 0; i < listItems.length; i++) {
-//   listItems[i].addEventListener('mouseover', () => {
-//     listItems[i].textContent = listItems[i].textContent.toUpperCase()
-//   })
-// }
+taskList.addEventListener('mouseover', (e) => {
+  if (e.target.tagName === 'LI') {
+    e.target.textContent = e.target.textContent.toUpperCase()
+  }
+})
 
 btnToggle.addEventListener('click', () => {
   const listContainer = document.querySelector('.list-container')
