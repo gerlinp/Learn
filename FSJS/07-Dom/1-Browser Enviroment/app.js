@@ -1,11 +1,15 @@
 const headline = document.getElementById('headline')
 const btnUpdate = document.getElementById('btn-main')
+const items = document.getElementsByTagName('li')
+const highlights = document.getElementsByClassName('highlight')
 const randomRGBColor = () => Math.floor(Math.random() * 256)
 
-const items = document.getElementsByTagName('li')
+for (const highlight of highlights) {
+  highlight.style.backgroundColor = 'cornsilk'
+}
 
 for (let i = 0; i < items.length; i++) {
-  items[i].style.backgroundColor = 'orchid'
+  items[i].style.color = 'orchid'
 }
 
 btnUpdate.addEventListener('click', () => {
