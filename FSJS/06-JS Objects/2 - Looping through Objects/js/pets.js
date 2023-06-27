@@ -9,34 +9,48 @@ const pets = [
     type: 'Dog',
     breed: 'Australian Shepherd',
     age: 8,
-    photo: 'img/aussie.jpg'
+    photo: 'img/aussie.jpg',
   },
-  { 
+  {
     name: 'Patches',
     type: 'Cat',
     breed: 'Domestic Shorthair',
     age: 1,
-    photo: 'img/tabby.jpg'
+    photo: 'img/tabby.jpg',
   },
-  { 
+  {
     name: 'Pugsley',
     type: 'Dog',
     breed: 'Pug',
     age: 6,
-    photo: 'img/pug.jpg'
+    photo: 'img/pug.jpg',
   },
-  { 
+  {
     name: 'Simba',
     type: 'Cat',
     breed: 'Persian',
     age: 5,
-    photo: 'img/persian.jpg'
+    photo: 'img/persian.jpg',
   },
-  { 
+  {
     name: 'Comet',
     type: 'Dog',
     breed: 'Golden Retriever',
     age: 3,
-    photo: 'img/golden.jpg'
-  }
-];
+    photo: 'img/golden.jpg',
+  },
+]
+
+let html = ''
+
+for (let i = 0; i < pets.length; i++) {
+  let pet = pets[i]
+  html += `
+  <h2>${pet.name}</h2>
+  <h3>${pet.type} | ${pet.breed}</h3>
+  <p>${pet.age}</p>
+  <img src="${pet.photo}" alt=${pets.breed}">
+  `
+}
+
+document.querySelector('main').insertAdjacentHTML('beforeend', html)
