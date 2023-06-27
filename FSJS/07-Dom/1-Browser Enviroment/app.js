@@ -1,12 +1,10 @@
-const btnUpdate = document.querySelector('.btn-main')
+const btnCreate = document.querySelector('.btn-main')
 const btnToggle = document.querySelector('.btn-toggle')
 
-btnUpdate.addEventListener('click', () => {
+btnCreate.addEventListener('click', () => {
   const input = document.querySelector('.input-main')
-  const headline = document.getElementById('headline')
+  const list = document.querySelector('ul')
 
-  headline.className = 'grow'
-  headline.textContent = input.value
   input.value = ''
 })
 
