@@ -16,6 +16,12 @@ function getJSON(url, callback) {
   xhr.send()
 }
 
+function getProfiles(json) {
+  json.people.map((person) => {
+    getJSON(wikiUrl + person.name, generateHTML)
+  })
+}
+
 // Generate the markup for each profile
 function generateHTML(data) {
   const section = document.createElement('section')
@@ -31,17 +37,14 @@ function generateHTML(data) {
   } else {
     section.innerHTML = `
       <img src="img/profile.jpg" alt="ocean clouds seen from space">
-      <h2>${data.title}</h2>
+      <h2>${data.title}</h2> 
       <p>Results unavailable for ${data.title}</p>
       ${data.extract_html}
     `
   }
 }
 
-btn.addEventListener('click', () => {
-  getJSON(astrosUrl, (json) => {
-    json.people.map((person) => {
-      getJSON(wikiUrl + person.name, generateHTML)
-    })
-  })
+btn.addEventListener('click', (e) => {
+  getJSON(astrosUrl, getProfiles())
+  e.tartget.remove()
 })
