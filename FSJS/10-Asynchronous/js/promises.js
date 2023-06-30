@@ -28,7 +28,7 @@ function getProfiles(json) {
 }
 
 function generateHTML(data) {
-  data.map((person) => {
+  data.forEach((person) => {
     const section = document.createElement('section')
     peopleList.appendChild(section)
     // Check if request returns a 'standard' page from Wiki
