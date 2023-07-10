@@ -50,8 +50,8 @@ class Owner {
 const ernie = new Pet('dog', 1, 'pug', 'yip yip')
 const vera = new Pet('dog', 8, 'border collie', 'woof woof')
 
-ernie.owner = new Owner('Ashley', '123 Main Street')
+ernie.owner = new Owner('Gerlin', '123 Main Street')
 ernie.owner.phone = '(555) 555-5555'
 
-console.log(ernie.owner.name)
-console.log(ernie.owner.phone)
+console.log(ernie.owner)
+console.log(ernie)
