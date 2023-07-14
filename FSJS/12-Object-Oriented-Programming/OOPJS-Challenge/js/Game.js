@@ -13,4 +13,11 @@ class Game {
 
     return players
   }
+
+  // Gets game ready for play
+  startGame() {
+    this.board.drawHTMLBoard()
+    this.activePlayer.activeToken.drawHTMLToken()
+    this.ready = true
+  }
 }
