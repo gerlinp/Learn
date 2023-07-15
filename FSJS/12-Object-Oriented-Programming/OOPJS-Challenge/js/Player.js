@@ -17,4 +17,12 @@ class Player {
 
     return tokens
   }
+
+  get unusedTokens() {
+    return this.tokens.filter((token) => !token.dropped)
+  }
+
+  getactiveToken() {
+    return this.unusedTokens[0]
+  }
 }
