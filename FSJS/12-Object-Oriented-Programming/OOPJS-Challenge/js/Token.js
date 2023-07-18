@@ -3,6 +3,15 @@ class Token {
     this.owner = owner
     this.id = `token-${index}-${owner.id}`
     this.dropped = false
+    this.columnLocation = 0
+  }
+
+  get htmlToken() {
+    return document.getElementById(this.id)
+  }
+
+  get offsetLeft() {
+    return this.htmlToken.offsetLeft
   }
 
   drawHTMLToken() {
