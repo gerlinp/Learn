@@ -19,4 +19,8 @@ class Space {
 
     document.getElementById('mask').appendChild(svgSpace)
   }
+
+  mark(token) {
+    this.token = token
+  }
 }
