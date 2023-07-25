@@ -1,3 +1,5 @@
+var Profile = require('./profile.js')
+
 // Handle the HTTP route GET/ and POST / i.e Home
 function home(request, response) {
   // if url == '/' && GET
@@ -8,7 +10,6 @@ function home(request, response) {
     response.write('Search\n')
     response.end('Footer\n')
   }
-
   // if url  === '/' && POST
   // redirect to /:username
 }
@@ -20,13 +21,30 @@ function user(request, response) {
   if (username.length > 0) {
     response.writeHead(200, { 'Content-Type': 'text/plain' })
     response.write('Header\n')
-    response.write(username + '\n')
-    response.end('Footer\n')
+
     // get json from Treehouse
+    var studentProfile = new Profile(username)
     // on 'end'
-    // show profile
+    studentProfile.on('end', function (profileJSON) {
+      // show profile
+
+      // Store the values which we need
+      var values = {
+        avatarUrl: profileJSON.gravatar_url,
+        username: profileJSON.profile_name,
+        badges: profileJSON.badges.length,
+        javaScriptPoints: profileJSON.points.JavaScript,
+      }
+      // Simple Response
+      response.write(values.username + ' has ' + values.badges + ' badges\n')
+      response.end('Footer\n')
+    })
+
     // on 'error'
-    // show error
+    studentProfile.on('error', function (error) {
+      // show error
+      response.end('Footer\n')
+    })
   }
 }
 
