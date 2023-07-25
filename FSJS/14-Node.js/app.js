@@ -7,12 +7,12 @@ var http = require('http')
 http
   .createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.write('THis is before the end\n')
-    response.end('Hello World\n')
-    response.write('this is after the end\n')
+    setInterval(function () {
+      response.write(new Date() + '\n')
+    }, 1000)
   })
   .listen(3000)
-console.log('Server running at at localhost:3000/ i hope')
+console.log('Server running at at "http://localhost:3000/"')
 
 // 2. Handle the HTTP route GET/ and POST / i.e Home
 // if url == '/' && GET
