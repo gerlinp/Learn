@@ -5,15 +5,14 @@
 
 var http = require('http')
 http
-  .createServer(function (req, res) {
-    res.createServer(200, { 'Content-Type': 'text/plain' })
-    res.writeHead(200, { 'Content-Type': 'text/plain' })
-    res.write('Hello World\n')
-    res.end('Hello World\n')
-    res.write('This is after the end\n')
+  .createServer(function (request, response) {
+    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.write('THis is before the end\n')
+    response.end('Hello World\n')
+    response.write('this is after the end\n')
   })
-  .listen(3000, '127.0.0.1')
-console.log('Server running at http://127.0.0.1:3000/')
+  .listen(3000)
+console.log('Server running at at localhost:3000/ i hope')
 
 // 2. Handle the HTTP route GET/ and POST / i.e Home
 // if url == '/' && GET
