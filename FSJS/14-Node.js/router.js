@@ -1,50 +1,53 @@
 var Profile = require('./profile.js')
 var renderer = require('./renderer.js')
 
-// Handle the HTTP route GET/ and POST / i.e Home
+var commonHeaders = { 'Content-Type': 'text/html' }
+
+//Handle HTTP route GET / and POST / i.e. Home
 function home(request, response) {
-  // if url == '/' && GET
+  //if url == "/" && GET
   if (request.url === '/') {
-    // show search
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    //show search
+    response.writeHead(200, commonHeaders)
     renderer.view('header', {}, response)
     renderer.view('search', {}, response)
     renderer.view('footer', {}, response)
     response.end()
   }
-  // if url  === '/' && POST
-  // redirect to /:username
+  //if url == "/" && POST
+  //redirect to /:username
 }
 
-// Handle the HTTP route GET /: username i.e. /chalkers
+//Handle HTTP route GET /:username i.e. /chalkers
 function user(request, response) {
-  // if url == '/....'
+  //if url == "/...."
   var username = request.url.replace('/', '')
   if (username.length > 0) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
+    response.writeHead(200, commonHeaders)
     renderer.view('header', {}, response)
 
-    // get json from Treehouse
+    //get json from Treehouse
     var studentProfile = new Profile(username)
-    // on 'end'
+    //on "end"
     studentProfile.on('end', function (profileJSON) {
-      // show profile
+      //show profile
 
-      // Store the values which we need
+      //Store the values which we need
       var values = {
         avatarUrl: profileJSON.gravatar_url,
         username: profileJSON.profile_name,
         badges: profileJSON.badges.length,
-        javaScriptPoints: profileJSON.points.JavaScript,
+        javascriptPoints: profileJSON.points.JavaScript,
       }
-      // Simple Response
-      renderer.view('profile', { values }, response)
+      //Simple response
+      renderer.view('profile', values, response)
       renderer.view('footer', {}, response)
       response.end()
     })
 
-    // on 'error'
+    //on "error"
     studentProfile.on('error', function (error) {
+      //show error
       renderer.view('error', { errorMessage: error.message }, response)
       renderer.view('search', {}, response)
       renderer.view('footer', {}, response)
