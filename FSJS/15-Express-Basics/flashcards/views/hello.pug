@@ -1,6 +1,8 @@
 extends layout
 
 block content
+    if name
+        h2 Hello #{name}!
     section#content
         h2 Welcome, student!
         form(action='', methods='post')

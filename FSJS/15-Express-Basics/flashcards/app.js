@@ -19,7 +19,7 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/hello', (req, res) => {
-  console.dir(req.body)
+  console.log(req.body)
   res.render('hello') 
 })
 
