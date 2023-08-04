@@ -10,12 +10,12 @@ app.use(cookieParser())
 app.set('view engine', 'pug')
 
 app.use((req, res, next) => {
-  req.message = 'This message made it!'
+  console.log('Hello')
   next()
 })
 
 app.use((req, res, next) => {
-  console.log(req.message)
+  console.log('World')
   next()
 })
 
