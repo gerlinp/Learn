@@ -11,7 +11,8 @@ app.set('view engine', 'pug')
 
 app.use((req, res, next) => {
   console.log('Hello')
-  next()
+  const err = new Error('Oh noes!')
+  next(err)
 })
 
 app.use((req, res, next) => {
