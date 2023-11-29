@@ -1,20 +1,49 @@
 import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react'
 
-const desc =
-  'I just learned how to create a React node and render it into the DOM'
-const myTitleID = 'main-title'
-const name = 'Gerlin'
+const Header = () => {
+  return (
+    <header>
+      <h1>Grocery List</h1>
+      <span className='total-items'>Items: 1</span>
+    </header>
+  )
+}
 
-const element = (
-  <>
-    <h1 id={myTitleID}>{name}'s First React Element</h1>
-    <p class='main -desc'>{desc}</p>
-    <input value={10 * 20} />
-  </>
-)
+const Item = () => {
+  return (
+    <div className='item'>
+      <button className='remove-item' />
+      <span className='item-name'>Apples</span>
+      <Counter />
+    </div>
+  )
+}
 
-const img = <img src='image.jpg' />
+const Counter = () => {
+  return (
+    <div className='quantity'>
+      <span className='qty-label'>QTY</span>
+      <button className='increment'>+</button>
+      <button className='decrement'>-</button>
+      <span className='quantity-amount'>15</span>
+    </div>
+  )
+}
+
+const App = () => {
+  return (
+    <div className='grocery-list'>
+      <Header />
+      {/* Grocery List*/}
+      <Item />
+    </div>
+  )
+}
 
 const root = createRoot(document.getElementById('root'))
-
-root.render(element)
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)
