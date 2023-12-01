@@ -1,11 +1,11 @@
 import { createRoot } from 'react-dom/client'
 import { StrictMode } from 'react'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
-      <h1>Grocery List</h1>
-      <span className='total-items'>Items: 1</span>
+      <h1>{props.title}</h1>
+      <span className='total-items'>Items: {props.itemTotal}</span>
     </header>
   )
 }
@@ -34,9 +34,9 @@ const Counter = () => {
 const App = () => {
   return (
     <div className='grocery-list'>
-      <Header />
+      <Header title='Grocery List' itemTotal={1} />
       {/* Grocery List*/}
-      <Item />
+      <Item name='Banana' quantity={5} />
     </div>
   )
 }
