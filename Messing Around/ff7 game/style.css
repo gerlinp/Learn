@@ -46,3 +46,12 @@ ul {
 #right-menu {
   width: 700px;
 }
+
+#left-menu {
+  display: flex;
+  flex-direction: column;
+}
+#top-left {
+  display: flex;
+  justify-content: space-around;
+}
