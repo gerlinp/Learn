@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,6 +23,7 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .menu {
@@ -35,6 +37,14 @@ ul {
   margin: 2px;
 }
 
+.top-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+.name {
+  margin: 0;
+  padding: 0;
+}
 #menu-container {
   display: flex;
 }
