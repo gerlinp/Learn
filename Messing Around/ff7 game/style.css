@@ -35,11 +35,25 @@ ul {
   min-height: 200px;
   min-width: 200px;
   margin: 2px;
+  width: 1000px;
+  flex-direction: column;
 }
 
-.top-title {
+#top-menu {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#team {
+  display: flex;
+  flex-direction: column;
+}
+.character {
+  display: flex;
+  flex-direction: row;
 }
 .name {
   margin: 0;
