@@ -27,7 +27,7 @@ ul {
 }
 
 li {
-  width: 200px;
+  width: 16vw;
 }
 .menu {
   display: flex;
@@ -58,6 +58,10 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.character > div {
+  display: flex;
+  width: 16vw;
 }
 .name {
   margin: 0;
