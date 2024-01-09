@@ -26,6 +26,9 @@ ul {
   align-items: flex-start;
 }
 
+li {
+  width: 200px;
+}
 .menu {
   display: flex;
   background: blue;
