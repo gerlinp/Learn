@@ -62,6 +62,9 @@ li {
 .character > div {
   display: flex;
   width: 16vw;
+  height: 50px;
+  align-items: center;
+  font-size: 25px;
 }
 .name {
   margin: 0;
